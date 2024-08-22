@@ -2,9 +2,9 @@
 
 &emsp;
 
-## Udemy The Ultimate React Course 2023: React, Redux & More by Jonas Schmedtmann
+## Udemy The Ultimate React Course 2024: React, Redux & More by Jonas Schmedtmann
 
-### **Objective:** Cretae a Travel List App
+### **Objective:** Create a Travel List App
 
 -  Explore React state management, uplifting, state types
 -  Explore propping
