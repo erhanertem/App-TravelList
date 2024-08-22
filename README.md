@@ -11,7 +11,7 @@
 
 &emsp;
 
-#### [Travel List App](https://app-tavellist-erhan-ertem.netlify.app/)
+#### [Travel List App](https://app-travellist-erhan-ertem.netlify.app/)
 
 <img src="./screenshot.webp" width="500px"/>
 

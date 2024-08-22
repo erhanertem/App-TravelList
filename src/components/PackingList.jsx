@@ -2,34 +2,34 @@ import { useState } from 'react';
 import Item from './Item';
 
 export default function PackingList({
-	itemsArr,
+	items,
 	onDeleteItem,
-	onToggleItems,
-	onClearList,
+	onToggleItem,
+	onDeleteItems,
 }) {
+	// Controlled state for sorting
 	const [sortBy, setSortBy] = useState('input');
 
 	let sortedItems;
-	if (sortBy === 'input') sortedItems = itemsArr;
+	if (sortBy === 'input') sortedItems = items;
 	if (sortBy === 'description')
-		sortedItems = [...itemsArr].sort((a, b) =>
-			a.description.localeCompare(b.description),
+		sortedItems = [...items].sort((a, b) =>
+			a.description.localeCompare(b.description)
 		);
 	if (sortBy === 'packed')
-		sortedItems = [...itemsArr].sort(
-			(a, b) => Number(a.packed) - Number(b.packed),
+		sortedItems = [...items].sort(
+			(a, b) => Number(a.packed) - Number(b.packed)
 		);
 
-	// console.log(itemsArr);
 	return (
 		<div className="list">
 			<ul>
 				{sortedItems.map((item) => (
 					<Item
 						item={item}
-						onDeleteItem={onDeleteItem}
-						onToggleItems={onToggleItems}
 						key={item.id}
+						onDeleteItem={onDeleteItem}
+						onToggleItem={onToggleItem}
 					/>
 				))}
 			</ul>
@@ -37,13 +37,13 @@ export default function PackingList({
 			<div className="actions">
 				<select
 					value={sortBy}
-					onChange={(event) => setSortBy(event.target.value)}
+					onChange={(e) => setSortBy(e.target.value)}
 				>
 					<option value="input">Sort by input order</option>
 					<option value="description">Sort by description</option>
 					<option value="packed">Sort by packed status</option>
 				</select>
-				<button onClick={onClearList}>Clear List</button>
+				<button onClick={onDeleteItems}>Clear List</button>
 			</div>
 		</div>
 	);
